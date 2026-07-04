@@ -1,7 +1,4 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { CAREER_ARC, LEARNING, PROFILE, SIDE_PROJECT } from '../data/about';
-import { scrollToSection } from '../utils/scrollToSection';
 import { EDUCATION, EXPERIENCE } from '../data/experience';
 import { FLEET, HOMELAB, SHARED_INFRA } from '../data/fleet';
 import { CERTIFICATIONS, SKILL_GROUPS } from '../data/skills';
@@ -14,14 +11,6 @@ const GITHUB = 'https://github.com/jiludkumar-therealone';
 const LINKEDIN = 'https://linkedin.com/in/jilu-d-kumar';
 
 export default function HomePage() {
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (!hash) return;
-    const timer = window.setTimeout(() => scrollToSection(hash), 80);
-    return () => window.clearTimeout(timer);
-  }, [hash]);
-
   return (
     <div className="min-h-dvh">
       <Header />
