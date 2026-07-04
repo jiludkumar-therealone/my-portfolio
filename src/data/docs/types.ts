@@ -2,7 +2,7 @@ export type DocSection = {
   id: string;
   title: string;
   summary?: string;
-  paragraphs: string[];
+  paragraphs?: string[];
   bullets?: string[];
 };
 

@@ -148,13 +148,15 @@ export default function DocPage() {
                       {section.summary && (
                         <p className="mt-2 text-sm font-medium text-accent">{section.summary}</p>
                       )}
-                      <div className="mt-4 space-y-4">
-                        {section.paragraphs.map((p) => (
-                          <p key={p.slice(0, 48)} className="prose-body">
-                            {p}
-                          </p>
-                        ))}
-                      </div>
+                      {(section.paragraphs?.length ?? 0) > 0 && (
+                        <div className="mt-4 space-y-4">
+                          {section.paragraphs!.map((p) => (
+                            <p key={p.slice(0, 48)} className="prose-body">
+                              {p}
+                            </p>
+                          ))}
+                        </div>
+                      )}
                       {section.bullets && (
                         <ul className="mt-4 space-y-2.5">
                           {section.bullets.map((b) => (
