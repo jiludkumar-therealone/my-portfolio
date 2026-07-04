@@ -1,6 +1,8 @@
-# Hypernova Portfolio
+# my-portfolio
 
 Personal portfolio showcasing the Day to Day enterprise fleet (FORGE, AERO, BEACON, MERIT, ONYX, IRIS) and homelab work.
+
+**Repo:** `jiludkumar-therealone/my-portfolio`
 
 ## Stack
 

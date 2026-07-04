@@ -1,5 +1,5 @@
 {
-  "name": "hypernova-portfolio",
+  "name": "my-portfolio",
   "version": "1.0.0",
   "private": false,
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=hypernova-portfolio"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=my-portfolio"
   },
   "dependencies": {
     "react": "^19.0.0",
