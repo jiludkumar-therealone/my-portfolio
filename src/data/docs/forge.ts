@@ -6,11 +6,11 @@ export const forgeDoc: ProjectDoc = {
   tagline: 'Enterprise asset command & CDN pipeline',
   accent: '#f59e0b',
   audience: 'Marketing, graphics, QA admins, and developers',
-  liveUrl: 'https://forge.daytodaybh.com',
-  liveLabel: 'Admin dashboard (Zero Trust)',
   stack: ['Next.js 16', 'Cloudflare Pages', 'D1', 'R2', 'Zero Trust'],
   inPlainTerms:
     'FORGE is the backstage of the Day to Day website. Graphics teams upload flyers and product photos here; FORGE cleans, labels, approves, and publishes them to the cloud so the public storefront (AERO) can load them fast — without bloating the website code.',
+  aiSummary:
+    'Internal admin CDN for Day to Day. Three-bucket pipeline (intake, classified, live), D1 catalog and campaign composer, Zero Trust gated. Publishes media AERO consumes. No public URL.',
   sections: [
     {
       id: 'philosophy',

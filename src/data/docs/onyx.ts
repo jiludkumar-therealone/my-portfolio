@@ -9,6 +9,8 @@ export const onyxDoc: ProjectDoc = {
   stack: ['Flask', 'Vue / Vite', 'SQLite', 'Airgap LAN'],
   inPlainTerms:
     'ONYX runs in-store prize draws fairly and legally. Before the event, customer purchase data is exported to a sealed file and the database is disconnected. During the live draw, random winners are picked cryptographically — and if anyone tampers with the file, the whole system locks down.',
+  aiSummary:
+    'Airgapped MOIC-compliant raffle system. CSV extraction, SHA-256 sealing, live integrity watchdog, cryptographic draws, admin + audience UIs. Isolated from cloud fleet.',
   sections: [
     {
       id: 'overview',

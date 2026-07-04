@@ -9,6 +9,8 @@ export const irisDoc: ProjectDoc = {
   stack: ['Python', 'Flask', 'SQLite', 'Scapy', 'vis-network'],
   inPlainTerms:
     'IRIS helps IT discover and map Dahua security cameras and NVRs on branch networks. A field laptop scans the local LAN, finds devices, detects duplicates or clones, and draws an interactive topology map — no cloud required during the scan.',
+  aiSummary:
+    'Field LAN tool for Dahua camera/NVR discovery. Python/Flask, ARP + port 37777 scan, topology maps, SQLite ledger baselines. Runs on branch outpost laptops only.',
   sections: [
     {
       id: 'overview',

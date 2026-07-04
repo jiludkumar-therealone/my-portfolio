@@ -1,4 +1,7 @@
-﻿import { CAREER_ARC, LEARNING, PROFILE, SIDE_PROJECT } from '../data/about';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { CAREER_ARC, LEARNING, PROFILE, SIDE_PROJECT } from '../data/about';
+import { scrollToSection } from '../utils/scrollToSection';
 import { EDUCATION, EXPERIENCE } from '../data/experience';
 import { FLEET, HOMELAB, SHARED_INFRA } from '../data/fleet';
 import { CERTIFICATIONS, SKILL_GROUPS } from '../data/skills';
@@ -11,6 +14,14 @@ const GITHUB = 'https://github.com/jiludkumar-therealone';
 const LINKEDIN = 'https://linkedin.com/in/jilu-d-kumar';
 
 export default function HomePage() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const timer = window.setTimeout(() => scrollToSection(hash), 80);
+    return () => window.clearTimeout(timer);
+  }, [hash]);
+
   return (
     <div className="min-h-dvh">
       <Header />
@@ -48,14 +59,14 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-secondary text-center rounded-xl border border-border-strong bg-surface-raised px-6 py-3 text-sm font-semibold text-ink-secondary hover:border-accent/40"
               >
-                Live storefront Γåù
+                Live storefront 
               </a>
             </div>
           </div>
         </section>
 
         {/* About */}
-        <section id="about" className="section-pad scroll-mt-16">
+        <section id="about" className="section-pad scroll-mt-nav">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <AnimateIn>
               <p className="section-label">About</p>
@@ -77,8 +88,8 @@ export default function HomePage() {
                     <p className="section-label text-[10px]">Education</p>
                     <h3 className="mt-2 font-bold text-ink">{EDUCATION.degree}</h3>
                     <p className="text-sm text-ink-secondary mt-1">{EDUCATION.school}</p>
-                    <p className="font-mono text-xs text-ink-muted mt-2">
-                      {EDUCATION.period} ┬╖ {EDUCATION.detail}
+                    <p className="text-sm text-ink-muted mt-2">
+                      {EDUCATION.period} | {EDUCATION.detail}
                     </p>
                   </div>
                 </AnimateIn>
@@ -94,7 +105,7 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="mt-3 inline-block text-sm font-semibold text-accent hover:underline underline-offset-4"
                     >
-                      worldwaystoursandtravels.com Γåù
+                      worldwaystoursandtravels.com 
                     </a>
                   </div>
                 </AnimateIn>
@@ -104,7 +115,7 @@ export default function HomePage() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="section-pad scroll-mt-16 bg-surface-muted/60 border-y border-border">
+        <section id="experience" className="section-pad scroll-mt-nav bg-surface-muted/60 border-y border-border">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <AnimateIn>
               <p className="section-label">Experience</p>
@@ -126,7 +137,7 @@ export default function HomePage() {
         </section>
 
         {/* Skills & certifications */}
-        <section id="skills" className="section-pad scroll-mt-16">
+        <section id="skills" className="section-pad scroll-mt-nav">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <AnimateIn>
               <p className="section-label">Skills</p>
@@ -158,7 +169,7 @@ export default function HomePage() {
                   <ul className="mt-3 space-y-2">
                     {LEARNING.map((item) => (
                       <li key={item} className="flex gap-2 text-sm text-ink-secondary">
-                        <span className="text-accent shrink-0">ΓåÆ</span>
+                        <span className="text-accent shrink-0 font-bold">-</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -171,20 +182,20 @@ export default function HomePage() {
               <h3 className="text-lg font-bold text-ink">Certifications</h3>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <div className="card card-interactive p-5">
-                  <p className="text-xs font-mono uppercase tracking-widest text-ink-muted mb-3">
+                  <p className="text-xs uppercase tracking-widest text-ink-muted mb-3 font-semibold">
                     Mainline
                   </p>
                   <ul className="space-y-2">
                     {CERTIFICATIONS.mainline.map((c) => (
                       <li key={c} className="text-sm text-ink-secondary flex gap-2">
-                        <span className="text-accent">Γ£ô</span>
+                        <span className="text-accent font-bold">+</span>
                         {c}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="card card-interactive p-5">
-                  <p className="text-xs font-mono uppercase tracking-widest text-ink-muted mb-3">
+                  <p className="text-xs uppercase tracking-widest text-ink-muted mb-3 font-semibold">
                     ServiceNow micro-certifications
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -204,13 +215,13 @@ export default function HomePage() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="section-pad scroll-mt-16 bg-surface-muted/60 border-y border-border">
+        <section id="projects" className="section-pad scroll-mt-nav bg-surface-muted/60 border-y border-border">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <AnimateIn>
               <p className="section-label">Day to Day fleet</p>
               <h2 className="section-title">Codename projects</h2>
               <p className="mt-3 prose-body max-w-2xl">
-                Six production systems I architect and maintain for Day to Day Discount Center ΓÇö
+                Six production systems I architect and maintain for Day to Day Discount Center -
                 from Cloudflare edge to branch LAN tooling.
               </p>
             </AnimateIn>
@@ -236,7 +247,7 @@ export default function HomePage() {
               {SHARED_INFRA.map((item, i) => (
                 <AnimateIn key={item.label} delay={i * 60}>
                   <div className="card card-interactive p-4 text-center h-full">
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-accent font-semibold">
+                    <p className="text-xs uppercase tracking-widest text-accent font-bold">
                       {item.label}
                     </p>
                     <p className="mt-2 text-sm font-semibold text-ink break-all">{item.value}</p>
@@ -248,7 +259,7 @@ export default function HomePage() {
         </section>
 
         {/* Homelab */}
-        <section id="homelab" className="section-pad scroll-mt-16 bg-surface-muted/60 border-t border-border">
+        <section id="homelab" className="section-pad scroll-mt-nav bg-surface-muted/60 border-t border-border">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <AnimateIn>
               <p className="section-label">Personal infra</p>
@@ -257,12 +268,12 @@ export default function HomePage() {
 
             <AnimateIn delay={100}>
               <div className="mt-6 card card-interactive p-6 md:p-8">
-                <p className="font-mono text-accent text-lg font-bold">{HOMELAB.domain}</p>
+                <p className="text-accent text-xl font-bold">{HOMELAB.domain}</p>
                 <p className="mt-3 prose-body max-w-2xl">
-                  Three Ubuntu VMs on Oracle Cloud Always Free ΓÇö{' '}
+                  Three Ubuntu VMs on Oracle Cloud Always Free -{' '}
                   <strong className="text-ink font-semibold">Orion</strong>,{' '}
                   <strong className="text-ink font-semibold">Argus</strong>, and{' '}
-                  <strong className="text-ink font-semibold">Apollo</strong> ΓÇö running Dockerized
+                  <strong className="text-ink font-semibold">Apollo</strong> - running Dockerized
                   self-hosted services. Tailscale mesh is live; Headscale is on my learning path.
                 </p>
 
@@ -270,8 +281,8 @@ export default function HomePage() {
                   {HOMELAB.vms.map((vm, i) => (
                     <AnimateIn key={vm.name} delay={160 + i * 80}>
                       <div className="vm-tile rounded-xl border border-border bg-surface-muted px-4 py-4 text-center">
-                        <p className="font-mono text-base font-bold text-accent">{vm.name}</p>
-                        <p className="mt-1 font-mono text-[10px] text-ink-muted uppercase tracking-widest">
+                        <p className="text-base font-bold text-accent">{vm.name}</p>
+                        <p className="mt-1 text-xs text-ink-muted uppercase tracking-wide font-medium">
                           {vm.os}
                         </p>
                       </div>
@@ -280,13 +291,13 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <span className="skill-chip rounded-full border border-border bg-surface-muted px-3 py-1 font-mono text-[11px] text-ink-muted">
+                  <span className="skill-chip rounded-full border border-border bg-surface-muted px-3 py-1 text-sm text-ink-secondary font-medium">
                     {HOMELAB.platform}
                   </span>
                   {HOMELAB.stack.map((t) => (
                     <span
                       key={t}
-                      className="skill-chip rounded-full border border-border bg-surface-muted px-3 py-1 font-mono text-[11px] text-ink-muted"
+                      className="skill-chip rounded-full border border-border bg-surface-muted px-3 py-1 text-sm text-ink-secondary font-medium"
                     >
                       {t}
                     </span>
@@ -294,9 +305,9 @@ export default function HomePage() {
                   {HOMELAB.learning.map((t) => (
                     <span
                       key={t}
-                      className="skill-chip rounded-full border border-accent/30 bg-accent-light px-3 py-1 font-mono text-[11px] text-accent-dark"
+                      className="skill-chip rounded-full border border-accent/30 bg-accent-light px-3 py-1 text-sm text-accent-dark font-medium"
                     >
-                      {t} ┬╖ learning
+                      {t} (learning)
                     </span>
                   ))}
                 </div>
@@ -325,7 +336,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-secondary rounded-xl border border-border-strong px-6 py-3 text-sm font-semibold text-ink-secondary hover:border-accent/40"
               >
-                LinkedIn Γåù
+                LinkedIn 
               </a>
               <a
                 href={GITHUB}
@@ -333,7 +344,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-secondary rounded-xl border border-border-strong px-6 py-3 text-sm font-semibold text-ink-secondary hover:border-accent/40"
               >
-                GitHub Γåù
+                GitHub 
               </a>
             </div>
           </AnimateIn>
@@ -342,9 +353,9 @@ export default function HomePage() {
 
       <footer className="border-t border-border py-8 bg-surface-raised">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-ink-muted">
-          <p>┬⌐ {new Date().getFullYear()} {PROFILE.name}</p>
-          <p className="font-mono">
-            <a href="https://portfolio.hypernova-prime.in" className="text-accent hover:underline">
+          <p>Copyright {new Date().getFullYear()} {PROFILE.name}</p>
+          <p>
+            <a href="https://portfolio.hypernova-prime.in" className="text-accent hover:underline font-medium">
               portfolio.hypernova-prime.in
             </a>
           </p>

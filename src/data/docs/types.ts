@@ -16,5 +16,6 @@ export type ProjectDoc = {
   liveLabel?: string;
   stack: string[];
   inPlainTerms: string;
+  aiSummary: string;
   sections: DocSection[];
 };

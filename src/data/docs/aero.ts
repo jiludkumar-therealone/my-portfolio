@@ -11,6 +11,8 @@ export const aeroDoc: ProjectDoc = {
   stack: ['React 19', 'Vite 7', 'Tailwind', 'PWA', 'Cloudflare Pages'],
   inPlainTerms:
     'AERO is the public Day to Day website — the digital storefront customers browse on phone or desktop. It shows products, promotions, and legal pages. It reads everything from FORGE and never edits the catalog itself.',
+  aiSummary:
+    'Public storefront at daytodaybh.com. React/Vite PWA, rigid promo grid, legal pages for app compliance, read-only Forge integration. Branch-aware campaigns and EN/AR support.',
   sections: [
     {
       id: 'overview',

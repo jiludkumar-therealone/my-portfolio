@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { NavLink } from '../components/NavLink';
 import { AnimateIn } from '../components/AnimateIn';
 import { Header } from '../components/Header';
 import { Badge } from '../components/Badge';
@@ -47,19 +48,18 @@ export default function DocPage() {
           }}
         >
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
-            <Link
-              to="/#projects"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-ink-muted hover:text-accent transition"
-            >
-              ← All projects
-            </Link>
+            <NavLink
+              hash="#projects"
+              label="All projects"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-ink-secondary hover:text-accent transition"
+            />
 
             <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
               <div>
-                <p className="font-mono text-sm font-bold tracking-widest" style={{ color: doc.accent }}>
+                <p className="text-sm font-bold tracking-wide uppercase" style={{ color: doc.accent }}>
                   {doc.codename}
                 </p>
-                <h1 className="mt-2 text-3xl md:text-4xl font-extrabold text-ink tracking-tight">
+                <h1 className="mt-2 text-3xl md:text-[2.25rem] font-extrabold text-ink tracking-tight">
                   {doc.tagline}
                 </h1>
                 <p className="mt-3 text-sm text-ink-muted">Written for: {doc.audience}</p>
@@ -71,7 +71,7 @@ export default function DocPage() {
               {doc.stack.map((t) => (
                 <span
                   key={t}
-                  className="rounded-md bg-surface-raised border border-border px-2 py-1 font-mono text-[10px] text-ink-muted"
+                  className="rounded-md bg-surface-muted border border-border px-2.5 py-1 text-xs font-medium text-ink-secondary"
                 >
                   {t}
                 </span>
@@ -101,6 +101,11 @@ export default function DocPage() {
                     On this page
                   </p>
                   <ul className="space-y-2 text-sm">
+                    <li>
+                      <a href="#ai-summary" className="text-ink-secondary hover:text-accent transition">
+                        AI Summary
+                      </a>
+                    </li>
                     <li>
                       <a href="#plain-terms" className="text-ink-secondary hover:text-accent transition">
                         In plain terms
@@ -135,7 +140,20 @@ export default function DocPage() {
 
               <article className="doc-prose min-w-0">
                 <AnimateIn>
-                  <div id="plain-terms" className="card p-6 md:p-8 border-accent/25 bg-accent-light/15 scroll-mt-24">
+                  <details id="ai-summary" open className="ai-summary card p-6 md:p-8 scroll-mt-nav mb-8 border-2" style={{ borderColor: `${doc.accent}40` }}>
+                    <summary className="text-lg flex items-center gap-2">
+                      <span className="rounded-md px-2 py-0.5 text-xs font-bold text-white" style={{ backgroundColor: doc.accent }}>
+                        AI
+                      </span>
+                      Quick summary
+                    </summary>
+                    <p className="text-[17px] md:text-lg text-ink-secondary leading-relaxed">{doc.aiSummary}</p>
+                    <p className="text-sm text-ink-muted mt-3">Pre-built overview for fast reading. Full detail in sections below.</p>
+                  </details>
+                </AnimateIn>
+
+                <AnimateIn delay={40}>
+                  <div id="plain-terms" className="card p-6 md:p-8 border-accent/25 bg-accent-light/15 scroll-mt-nav">
                     <p className="section-label text-[10px]">In plain terms</p>
                     <p className="mt-3 text-base md:text-lg text-ink leading-relaxed">{doc.inPlainTerms}</p>
                   </div>
@@ -175,12 +193,11 @@ export default function DocPage() {
                 ))}
 
                 <AnimateIn delay={200} className="mt-12 pt-8 border-t border-border flex flex-wrap gap-3">
-                  <Link
-                    to="/#projects"
-                    className="btn-secondary rounded-xl border border-border-strong px-5 py-2.5 text-sm font-semibold text-ink"
-                  >
-                    ← Back to projects
-                  </Link>
+                  <NavLink
+                    hash="#projects"
+                    label="Back to projects"
+                    className="btn-secondary rounded-xl border border-border-strong px-5 py-2.5 text-sm font-semibold text-ink inline-block"
+                  />
                   {doc.liveUrl && (
                     <a
                       href={doc.liveUrl}

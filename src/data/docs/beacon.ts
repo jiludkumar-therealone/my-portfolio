@@ -11,6 +11,8 @@ export const beaconDoc: ProjectDoc = {
   stack: ['Vanilla JS', 'Cloudflare Worker', 'R2', 'Tizen / Android TV'],
   inPlainTerms:
     'BEACON replaces USB sticks on branch TVs. Upload videos and images through a web portal; branch screens automatically play them in a loop — fullscreen, no cursor, no buttons. Works on Samsung Tizen TVs, Android TV, and browsers.',
+  aiSummary:
+    'Branch digital signage: Worker + R2 playlist, upload portal, fullscreen kiosk player on Tizen/Android TV. Live at signage.daytodaybh.com. Embeddable in AERO when catalog is empty.',
   sections: [
     {
       id: 'overview',

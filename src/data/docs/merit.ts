@@ -6,11 +6,11 @@ export const meritDoc: ProjectDoc = {
   tagline: 'Employee performance appraisal',
   accent: '#a78bfa',
   audience: 'HR, supervisors, managers, branch admins',
-  liveUrl: 'https://hr.pa.daytodaybh.com',
-  liveLabel: 'HR portal (Zero Trust)',
   stack: ['React 19', 'Workers', 'D1', 'R2', 'Cloudflare Access'],
   inPlainTerms:
     'MERIT is the internal HR appraisal system. HR uploads the employee roster from Excel; supervisors and managers fill evaluation forms online; HR reviews and prints reports. Photos and documents live on secure cloud storage behind company login.',
+  aiSummary:
+    'Internal HR appraisal portal (Zero Trust). Excel roster import, supervisor/manager workflow, D1 + R2 on Cloudflare Workers. PIN auth, printable reports. Not publicly accessible.',
   sections: [
     {
       id: 'overview',
