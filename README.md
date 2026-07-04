@@ -22,7 +22,22 @@ npm run dev
 npm run deploy
 ```
 
-Or connect this repo to **Cloudflare Pages** → Build command: `npm run build` → Output: `dist`.
+### Cloudflare Pages (Git — recommended)
+
+| Setting | Value |
+|---------|--------|
+| **Build command** | `npm run build` |
+| **Build output directory** | `dist` |
+| **Deploy command** | *(leave empty — do not use `wrangler deploy`)* |
+| **Production branch** | `main` |
+
+This is a **static Pages** site, not a Worker. `npm run build` is enough; Pages publishes `dist` automatically.
+
+### Manual CLI deploy
+
+```bash
+npm run deploy
+```
 
 ## Custom domain (later)
 
