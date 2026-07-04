@@ -1,47 +1,27 @@
-# my-portfolio
+# Jilu Dileep Kumar — Portfolio
 
-Personal portfolio showcasing the Day to Day enterprise fleet (FORGE, AERO, BEACON, MERIT, ONYX, IRIS) and homelab work.
+**Live:** [portfolio.hypernova-prime.in](https://portfolio.hypernova-prime.in)
 
-**Repo:** `jiludkumar-therealone/my-portfolio`
+Personal portfolio site showcasing enterprise systems built for **Day to Day Discount Center** — a codename fleet spanning Cloudflare edge infrastructure, retail storefronts, branch digital signage, HR appraisals, camera intelligence, and airgapped live events.
 
-## Stack
+## Featured work
 
-- React 19 + Vite 6 + Tailwind 4
-- Cloudflare Pages
+| Codename | Focus |
+|----------|--------|
+| **FORGE** | Enterprise asset pipeline, catalog, campaigns (Node 3) |
+| **AERO** | Production storefront at [daytodaybh.com](https://daytodaybh.com) |
+| **BEACON** | Branch digital signage player |
+| **MERIT** | Employee performance appraisal platform |
+| **ONYX** | MOIC-compliant airgapped raffle system |
+| **IRIS** | Dahua camera / NVR branch network intelligence |
 
-## Local dev
+Also covers personal homelab work on **hypernova-prime.in** (Oracle Cloud, Docker).
 
-```bash
-npm install
-npm run dev
-```
+## Built with
 
-## Deploy (personal Cloudflare account)
+React 19 · Vite · Tailwind CSS · Cloudflare Workers (static assets)
 
-```bash
-npm run deploy
-```
+---
 
-### Cloudflare Workers Builds (Git)
-
-You connected **Workers + Git** (not classic Pages). There is no “build output directory” field — `wrangler.toml` points at `./dist`.
-
-| Setting | Value |
-|---------|--------|
-| **Build command** | `npm run build` |
-| **Deploy command** | `npx wrangler deploy` |
-| **Production branch** | `main` |
-
-`wrangler.toml` uses `[assets] directory = "./dist"` so `wrangler deploy` publishes the Vite build.
-
-### Manual CLI deploy
-
-```bash
-npm run deploy
-```
-
-## Custom domain (later)
-
-Custom domain: `portfolio.hypernova-prime.in` (configured in `wrangler.toml` + Workers Domains & Routes).
-
-If CI deploy fails on workers.dev, ensure `[[routes]]` + `workers_dev = false` are set (see `wrangler.toml`).
+*GitHub About line (paste in repo settings):*  
+`Portfolio — enterprise retail systems (FORGE, AERO, BEACON, MERIT, ONYX, IRIS) · portfolio.hypernova-prime.in`

@@ -1,5 +1,4 @@
 import { FLEET, HOMELAB, SHARED_INFRA } from './data/fleet';
-import { FleetDiagram } from './components/FleetDiagram';
 import { ProjectCard } from './components/ProjectCard';
 
 const GITHUB = 'https://github.com/jiludkumar-therealone';
@@ -16,7 +15,6 @@ export default function App() {
             <span className="text-hyper-muted"> / portfolio</span>
           </a>
           <nav className="hidden sm:flex gap-6 text-xs font-semibold text-hyper-muted">
-            <a href="#fleet" className="hover:text-white transition">Fleet</a>
             <a href="#projects" className="hover:text-white transition">Projects</a>
             <a href="#infra" className="hover:text-white transition">Infra</a>
             <a href="#homelab" className="hover:text-white transition">Homelab</a>
@@ -63,19 +61,6 @@ export default function App() {
               Live storefront ↗
             </a>
           </div>
-        </section>
-
-        {/* Fleet diagram */}
-        <section id="fleet" className="scroll-mt-24 mb-20">
-          <h2 className="font-mono text-xs uppercase tracking-[0.3em] text-hyper-muted mb-2">Architecture</h2>
-          <p className="text-2xl font-bold text-white mb-6">Fleet topology</p>
-          <FleetDiagram />
-          <p className="mt-4 text-sm text-hyper-muted max-w-2xl">
-            <strong className="text-white/90">FORGE</strong> publishes assets and catalog data;
-            <strong className="text-white/90"> AERO</strong> and <strong className="text-white/90">BEACON</strong> consume
-            from shared Cloudflare infrastructure. ONYX, IRIS, and MERIT operate on parallel tracks for
-            raffles, branch LAN ops, and HR appraisals.
-          </p>
         </section>
 
         {/* Projects */}
@@ -133,7 +118,7 @@ export default function App() {
       <footer className="border-t border-hyper-border py-10">
         <div className="mx-auto max-w-6xl px-5 flex flex-col sm:flex-row justify-between gap-4 text-xs text-hyper-muted">
           <p>
-            © {new Date().getFullYear()} Jilu Dileep Kumar · Built with React + Vite · Deployed on Cloudflare Pages
+            © {new Date().getFullYear()} Jilu Dileep Kumar · React + Vite · Cloudflare Workers
           </p>
           <p className="font-mono">
             <a href="https://portfolio.hypernova-prime.in" className="text-hyper-cyan hover:underline">
