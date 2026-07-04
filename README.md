@@ -1,36 +1,59 @@
+<div align="center">
+
 # Jilu Dileep Kumar — Portfolio
 
-**Live:** [portfolio.hypernova-prime.in](https://portfolio.hypernova-prime.in)  
-**LinkedIn:** [linkedin.com/in/jilu-d-kumar](https://linkedin.com/in/jilu-d-kumar)
+[![Live site](https://img.shields.io/badge/Live-portfolio.hypernova--prime.in-0d9488?style=for-the-badge)](https://portfolio.hypernova-prime.in)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jilu--d--kumar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jilu-d-kumar)
+[![Email](https://img.shields.io/badge/Email-jiludkumar@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jiludkumar@gmail.com)
 
-Personal portfolio showcasing production systems built for **Day to Day Discount Center** and personal homelab work.
+**Assistant to IT Manager** at Day to Day Discount Center · Manama, Bahrain
 
-## Career arc
+[View full story on my GitHub profile →](https://github.com/jiludkumar-therealone)
 
-Five years in Bangalore as a ServiceNow developer at **Infosys** (CyberFrontDoor, ITSM/CSM) and **PwC** (Hardware Asset Management, HR Service Delivery lead — 11 integrations, 35% virtual-agent efficiency gain, junior mentoring). After a relocation preparation period (Sep–Dec 2025), joined **Day to Day Discount Center** in Bahrain in **February 2026** as **Assistant to IT Manager** — designing and shipping the codename fleet on Cloudflare edge infrastructure.
-
-**Education:** B.Tech Computer Science & Engineering, Saintgits College of Engineering (2015–2019), CGPA 7.74.
-
-## Featured work
-
-| Codename | Focus |
-|----------|--------|
-| **FORGE** | Enterprise asset pipeline, catalog, campaigns (Node 3) |
-| **AERO** | Production storefront at [daytodaybh.com](https://daytodaybh.com) |
-| **BEACON** | Branch digital signage player |
-| **MERIT** | Employee performance appraisal platform |
-| **ONYX** | MOIC-compliant airgapped raffle system |
-| **IRIS** | Dahua camera / NVR branch network intelligence |
-
-## Homelab
-
-**hypernova-prime.in** — three Ubuntu VMs on Oracle Cloud Always Free (**Orion**, **Argus**, **Apollo**). Dockerized self-hosted stack with Tailscale mesh; Headscale on the learning path.
-
-## Built with
-
-React 19 · Vite · Tailwind CSS · Cloudflare Workers (static assets)
+</div>
 
 ---
 
-*GitHub About line:*  
-`Assistant to IT Manager @ Day to Day · FORGE, AERO, BEACON, MERIT, ONYX, IRIS · homelab @ hypernova-prime.in`
+Source for **[portfolio.hypernova-prime.in](https://portfolio.hypernova-prime.in)** — React 19 + Vite + Tailwind, deployed on Cloudflare Workers.
+
+## What's inside
+
+| Section | Content |
+|---------|---------|
+| **About** | Career arc — Infosys → PwC → Day to Day (Feb 2026) |
+| **Experience** | Full work history with project highlights |
+| **Skills** | Platform, frontend, backend, infra + certifications |
+| **Projects** | Day to Day codename fleet (FORGE, AERO, BEACON, MERIT, ONYX, IRIS) |
+| **Homelab** | hypernova-prime.in — Orion, Argus, Apollo |
+
+## Day to Day fleet (featured)
+
+| Codename | Focus | Live |
+|----------|--------|------|
+| **FORGE** | Asset pipeline, catalog, campaigns | [forge.daytodaybh.com](https://forge.daytodaybh.com) |
+| **AERO** | Production storefront & PWA | [daytodaybh.com](https://daytodaybh.com) |
+| **BEACON** | Branch digital signage | [signage.daytodaybh.com](https://signage.daytodaybh.com) |
+| **MERIT** | HR performance appraisal | [hr.pa.daytodaybh.com](https://hr.pa.daytodaybh.com) |
+| **ONYX** | MOIC-compliant airgapped raffle | Airgapped |
+| **IRIS** | Dahua camera / NVR intelligence | Internal |
+
+## Local development
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build
+npm run deploy   # Cloudflare Workers (wrangler)
+```
+
+## Stack
+
+React 19 · Vite · Tailwind CSS 4 · TypeScript · Cloudflare Workers Assets
+
+---
+
+<div align="center">
+
+<sub>Homelab @ hypernova-prime.in · Ex-PwC / Infosys · B.Tech CSE Saintgits (2015–2019)</sub>
+
+</div>
