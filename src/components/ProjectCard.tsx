@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { Project } from '../data/fleet';
 import { Badge } from './Badge';
 
@@ -43,7 +44,13 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <div className="mt-5 pt-4 border-t border-border flex flex-wrap gap-4">
+      <div className="mt-5 pt-4 border-t border-border flex flex-wrap gap-4 items-center">
+        <Link
+          to={`/docs/${project.codename.toLowerCase()}`}
+          className="text-sm font-bold text-ink hover:text-accent transition"
+        >
+          Documentation →
+        </Link>
         {project.url && (
           <a
             href={project.url}

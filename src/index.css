@@ -251,6 +251,15 @@ body {
   animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
+.doc-toc a {
+  display: block;
+  padding: 2px 0;
+}
+
+.doc-prose section + section {
+  padding-top: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

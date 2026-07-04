@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const GITHUB = 'https://github.com/jiludkumar-therealone';
 const LINKEDIN = 'https://linkedin.com/in/jilu-d-kumar';
@@ -24,15 +25,15 @@ export function Header() {
   return (
     <header className="header-enter sticky top-0 z-50 border-b border-border bg-surface-raised/90 backdrop-blur-md">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-        <a href="#" className="font-mono text-sm font-bold tracking-tight text-ink shrink-0">
+        <Link to="/" className="font-mono text-sm font-bold tracking-tight text-ink shrink-0">
           Jilu<span className="text-accent">.</span>dev
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-ink-muted">
           {NAV.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link hover:text-accent transition-colors">
+            <Link key={item.href} to={`/${item.href}`} className="nav-link hover:text-accent transition-colors">
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -78,14 +79,14 @@ export function Header() {
         <div className="md:hidden border-t border-border bg-surface-raised px-4 pb-5 pt-3">
           <nav className="flex flex-col gap-1">
             {NAV.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={`/${item.href}`}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-base font-medium text-ink-secondary hover:bg-surface-muted hover:text-accent transition"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-4 flex gap-2">
