@@ -3,12 +3,17 @@
 @theme {
   --font-sans: "DM Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --color-hyper-bg: #06070d;
-  --color-hyper-panel: #0d0f18;
-  --color-hyper-border: #1e2235;
-  --color-hyper-muted: #8b92b0;
-  --color-hyper-cyan: #22d3ee;
-  --color-hyper-violet: #8b5cf6;
+  --color-surface: #f8fafc;
+  --color-surface-raised: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-ink-secondary: #475569;
+  --color-ink-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-accent: #0d9488;
+  --color-accent-light: #ccfbf1;
+  --color-accent-dark: #0f766e;
 }
 
 html {
@@ -18,23 +23,33 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--color-hyper-bg);
-  color: #e8eaf4;
+  background: var(--color-surface);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
-  color: #fff;
+  background: rgba(13, 148, 136, 0.18);
+  color: var(--color-ink);
 }
 
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+.section-pad {
+  @apply py-14 md:py-20;
 }
 
-.glow-orb {
-  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(34, 211, 238, 0.18), transparent 70%);
+.section-label {
+  @apply font-mono text-[11px] uppercase tracking-[0.28em] text-accent font-semibold;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-bold text-ink tracking-tight mt-2;
+}
+
+.card {
+  @apply rounded-2xl border border-border bg-surface-raised shadow-sm;
+}
+
+.prose-body {
+  @apply text-[15px] md:text-base text-ink-secondary leading-relaxed;
 }

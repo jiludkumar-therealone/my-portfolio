@@ -130,7 +130,12 @@ export const SHARED_INFRA = [
 
 export const HOMELAB = {
   domain: 'hypernova-prime.in',
-  vms: 3,
   platform: 'Oracle Cloud Always Free',
-  stack: ['Docker', 'Traefik', 'Self-hosted apps'],
+  vms: [
+    { name: 'Orion', os: 'Ubuntu' },
+    { name: 'Argus', os: 'Ubuntu' },
+    { name: 'Apollo', os: 'Ubuntu' },
+  ],
+  stack: ['Docker', 'Traefik', 'Self-hosted apps', 'Tailscale'],
+  learning: ['Headscale'],
 };
