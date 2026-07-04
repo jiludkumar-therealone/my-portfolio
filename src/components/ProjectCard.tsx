@@ -3,7 +3,7 @@ import { Badge } from './Badge';
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card p-5 md:p-6 flex flex-col h-full transition hover:shadow-md hover:border-border-strong">
+    <article className="card card-interactive p-5 md:p-6 flex flex-col h-full hover:border-border-strong">
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">

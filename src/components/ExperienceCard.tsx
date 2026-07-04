@@ -2,7 +2,7 @@ import type { ExperienceEntry } from '../data/experience';
 
 export function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
   return (
-    <article className="card p-5 md:p-6">
+    <article className="card card-interactive p-5 md:p-6">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
         <div>
           <h3 className="text-base md:text-lg font-bold text-ink">{entry.role}</h3>

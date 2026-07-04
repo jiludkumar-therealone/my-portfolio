@@ -16,6 +16,39 @@
   --color-accent-dark: #0f766e;
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(12px, -8px) scale(1.04);
+  }
+}
+
+@keyframes gradient-drift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -52,4 +85,196 @@ body {
 
 .prose-body {
   @apply text-[15px] md:text-base text-ink-secondary leading-relaxed;
+}
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance stagger */
+.hero-enter > * {
+  animation: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hero-enter > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-enter > *:nth-child(2) { animation-delay: 0.12s; }
+.hero-enter > *:nth-child(3) { animation-delay: 0.2s; }
+.hero-enter > *:nth-child(4) { animation-delay: 0.28s; }
+.hero-enter > *:nth-child(5) { animation-delay: 0.36s; }
+.hero-enter > *:nth-child(6) { animation-delay: 0.44s; }
+
+/* Hero ambient background */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(204, 251, 241, 0.55) 0%,
+    rgba(248, 250, 252, 1) 45%,
+    rgba(224, 242, 254, 0.35) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-drift 14s ease-in-out infinite;
+}
+
+.hero-bg::before,
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(48px);
+}
+
+.hero-bg::before {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  right: -40px;
+  background: rgba(13, 148, 136, 0.18);
+  animation: hero-glow 9s ease-in-out infinite;
+}
+
+.hero-bg::after {
+  width: 200px;
+  height: 200px;
+  bottom: -60px;
+  left: -30px;
+  background: rgba(45, 212, 191, 0.14);
+  animation: hero-glow 11s ease-in-out infinite reverse;
+}
+
+.hero-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactive cards */
+.card-interactive {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+/* Nav underline */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.28);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+/* Homelab VM tiles */
+.vm-tile {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.vm-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(13, 148, 136, 0.35);
+  background-color: rgba(204, 251, 241, 0.35);
+}
+
+/* Skill chips */
+.skill-chip {
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+/* Header slide-in */
+.header-enter {
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-enter > *,
+  .hero-bg,
+  .hero-bg::before,
+  .hero-bg::after,
+  .header-enter {
+    animation: none;
+  }
+
+  .card-interactive:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .vm-tile:hover,
+  .skill-chip:hover {
+    transform: none;
+  }
 }
