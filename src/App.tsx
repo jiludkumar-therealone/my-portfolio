@@ -135,7 +135,11 @@ export default function App() {
           <p>
             © {new Date().getFullYear()} Jilu Dileep Kumar · Built with React + Vite · Deployed on Cloudflare Pages
           </p>
-          <p className="font-mono">portfolio.hypernova-prime.in — coming soon</p>
+          <p className="font-mono">
+            <a href="https://portfolio.hypernova-prime.in" className="text-hyper-cyan hover:underline">
+              portfolio.hypernova-prime.in
+            </a>
+          </p>
         </div>
       </footer>
     </div>

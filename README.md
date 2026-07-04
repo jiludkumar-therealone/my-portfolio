@@ -42,4 +42,6 @@ npm run deploy
 
 ## Custom domain (later)
 
-Add `portfolio.hypernova-prime.in` in Cloudflare Pages → Custom domains → CNAME from `hypernova-prime.in` DNS.
+Custom domain: `portfolio.hypernova-prime.in` (configured in `wrangler.toml` + Workers Domains & Routes).
+
+If CI deploy fails on workers.dev, ensure `[[routes]]` + `workers_dev = false` are set (see `wrangler.toml`).

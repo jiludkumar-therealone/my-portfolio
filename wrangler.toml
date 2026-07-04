@@ -4,6 +4,12 @@
 
 name = "my-portfolio"
 compatibility_date = "2025-01-01"
+workers_dev = false
+
+# Custom domain — avoids workers.dev requirement in CI deploy
+[[routes]]
+pattern = "portfolio.hypernova-prime.in"
+custom_domain = true
 
 [assets]
 directory = "./dist"
