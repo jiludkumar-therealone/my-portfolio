@@ -6,7 +6,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jilu--d--kumar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jilu-d-kumar)
 [![Email](https://img.shields.io/badge/Email-jiludkumar@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jiludkumar@gmail.com)
 
-**Assistant to IT Manager** at Day to Day Discount Center · Manama, Bahrain
+**IT Manager Assistant Dev** @ Day to Day Discount Center · Bahrain
 
 [View full story on my GitHub profile →](https://github.com/jiludkumar-therealone)
 

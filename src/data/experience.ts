@@ -9,7 +9,7 @@ export type ExperienceEntry = {
 export const EXPERIENCE: ExperienceEntry[] = [
   {
     period: 'Feb 2026 – Present',
-    role: 'Assistant to IT Manager',
+    role: 'IT Manager Assistant Dev',
     org: 'Day to Day Discount Center',
     location: 'Bahrain',
     highlights: [
