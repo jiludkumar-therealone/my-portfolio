@@ -22,16 +22,17 @@ npm run dev
 npm run deploy
 ```
 
-### Cloudflare Pages (Git — recommended)
+### Cloudflare Workers Builds (Git)
+
+You connected **Workers + Git** (not classic Pages). There is no “build output directory” field — `wrangler.toml` points at `./dist`.
 
 | Setting | Value |
 |---------|--------|
 | **Build command** | `npm run build` |
-| **Build output directory** | `dist` |
-| **Deploy command** | *(leave empty — do not use `wrangler deploy`)* |
+| **Deploy command** | `npx wrangler deploy` |
 | **Production branch** | `main` |
 
-This is a **static Pages** site, not a Worker. `npm run build` is enough; Pages publishes `dist` automatically.
+`wrangler.toml` uses `[assets] directory = "./dist"` so `wrangler deploy` publishes the Vite build.
 
 ### Manual CLI deploy
 
